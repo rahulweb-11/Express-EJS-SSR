@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="./style.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+    <aside class="col-md-3">
+      
+  <div class="card">
+    <article class="filter-group">
+      <header class="card-header">
+        <a
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse_1"
+          aria-expanded="true"
+          class=""
+        >
+          <i class="icon-control fa fa-chevron-down"></i>
+          <h6 class="title">Product type</h6>
+        </a>
+      </header>
+      <div class="filter-content collapse show" id="collapse_1">
+        <div class="card-body">
+          <ul class="list-menu">
+          <li><a href="/upcoming">Upcoming Launches</a></li>
+          <li><a href="/past">Past Launches </a></li>
+          <li><a href="/latest">Latest Launches </a></li>
+          <li><a href="/next">Next Launches </a></li>
+          </ul>
+  
+        </div> <!-- card-body.// -->
+      </div>
+    </article> <!-- filter-group  .// -->
+    <article class="filter-group">
+      <header class="card-header">
+        <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
+          <i class="icon-control fa fa-chevron-down"></i>
+          <h6 class="title">Brands </h6>
+        </a>
+      </header>
+      
+    </article> <!-- filter-group .// -->
+    <article class="filter-group">
+      <header class="card-header">
+        <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+          <i class="icon-control fa fa-chevron-down"></i>
+          <h6 class="title">Price range </h6>
+        </a>
+      </header>
+    </article> <!-- filter-group .// -->
+    <article class="filter-group">
+      <header class="card-header">
+        <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
+          <i class="icon-control fa fa-chevron-down"></i>
+          <h6 class="title">Sizes </h6>
+        </a>
+      </header>
+    </article> <!-- filter-group .// -->
+    <article class="filter-group">
+      <div class="filter-content collapse in" id="collapse_5" style="">
+        <div class="card-body">
+          <label class="custom-control custom-radio">
+            <input type="radio" name="myfilter_radio" checked="" class="custom-control-input">
+            <div class="custom-control-label">Any condition</div>
+          </label>
+  
+          <label class="custom-control custom-radio">
+            <input type="radio" name="myfilter_radio" class="custom-control-input">
+            <div class="custom-control-label">Brand new </div>
+          </label>
+  
+          <label class="custom-control custom-radio">
+            <input type="radio" name="myfilter_radio" class="custom-control-input">
+            <div class="custom-control-label">Used items</div>
+          </label>
+  
+          <label class="custom-control custom-radio">
+            <input type="radio" name="myfilter_radio" class="custom-control-input">
+            <div class="custom-control-label">Very old</div>
+          </label>
+        </div><!-- card-body.// -->
+      </div>
+    </article> <!-- filter-group .// -->
+  </div> <!-- card.// -->
+  
+    </aside>
+    <main class="col-md-9">
+  
+<!-- sect-heading -->
+<header class="border-bottom mb-4 pb-3">
+    <div class="form-inline">
+      <span class="mr-md-auto"><%= upcoming.length %> Items found </span>
+      <select class="mr-2 form-control">
+        <option>Latest items</option>
+        <option>Trending</option>
+        <option>Most Popular</option>
+        <option>Cheapest</option>
+      </select>
+      <div class="btn-group">
+        <a href="#" class="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view"> 
+          <i class="fa fa-bars"></i></a>
+        <a href="#" class="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view"> 
+          <i class="fa fa-th"></i></a>
+      </div>
+    </div>
+</header>
+  <div class="row">
+    <% upcoming.forEach(function (item) { %>
+      <div class="col-md-4">
+        <figure class="card card-product-grid">
+          <div class="img-wrap"> 
+                  <img onclick="show()" src=<%= item.links.mission_patch_small %> class="img-fluid">
+            <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
+          </div> <!-- img-wrap.// -->
+          <figcaption class="info-wrap">
+            <div class="fix-height">
+              <a href="#" class="title"><%= item.mission_name %></a>
+              <div class="price-wrap mt-2">
+              </div> <!-- price-wrap.// -->
+            </div>
+            <a href="#" class="btn btn-block btn-primary">View </a>	
+          </figcaption>
+        </figure>
+      </div>
+   <% }) %>
+   
+
+  </div> <!-- row end.// -->
+  
+    </main>
+    </div>
+  </div>
+</body>
+</html>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
